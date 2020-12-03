@@ -13,12 +13,16 @@ router.post('/find-account', function (req, res) {
     res.redirect('new-account/validation/account-number-error')
   }
 
-  if (sortCode === '1122334') {
+  else if (sortCode === '1122334') {
     res.redirect('new-account/validation/sort-code-error')
   }
 
-  if (sortCode === '111111') {
+  else if (sortCode === '111111') {
     res.redirect('new-account/validation/roll-number-error')
+  }
+
+  else {
+    res.redirect('new-account/check-answers')
   }
 
 })
@@ -31,14 +35,17 @@ router.post('/change-account', function (req, res) {
     res.redirect('change-account/validation/account-number-error')
   }
 
-  if (sortCode === '1122334') {
+  else if (sortCode === '1122334') {
     res.redirect('change-account/validation/sort-code-error')
   }
 
-  if (sortCode === '111111') {
+  else if (sortCode === '111111') {
     res.redirect('change-account/validation/roll-number-error')
   }
 
+  else {
+    res.redirect('change-account/check-answers')
+  }
 })
 
 module.exports = router
