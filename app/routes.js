@@ -21,6 +21,18 @@ router.post('/find-account', function (req, res) {
     res.redirect('new-account/validation/roll-number-error')
   }
 
+  else if (sortCode === '222222') {
+    res.redirect('new-account/validation/sort-code-changed')
+  }
+
+  else if (sortCode === '333333') {
+    res.redirect('new-account/validation/sort-code-does-not-exist')
+  }
+
+  else if (sortCode === '') {
+    res.redirect('new-account/validation/enter-sort-code')
+  }
+
   else {
     res.redirect('new-account/check-answers')
   }
@@ -41,6 +53,18 @@ router.post('/change-account', function (req, res) {
 
   else if (sortCode === '111111') {
     res.redirect('change-account/validation/roll-number-error')
+  }
+
+  else if (sortCode === '222222') {
+    res.redirect('change-account/validation/sort-code-changed')
+  }
+
+  else if (sortCode === '333333') {
+    res.redirect('change-account/validation/sort-code-does-not-exist')
+  }
+
+  else if (sortCode === '') {
+    res.redirect('change-account/validation/enter-sort-code')
   }
 
   else {
