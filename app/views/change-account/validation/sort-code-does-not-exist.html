@@ -24,7 +24,7 @@ Bank Maintenance
       titleText: "There is a problem",
       errorList: [
         {
-          text: "The sort code does not exist",
+          text: "We cannot find this sort code",
           href: "#passport-issued-error"
         }
       ]
@@ -46,7 +46,7 @@ Bank Maintenance
       Must be 6 digits long
     </div>
     <span id="national-insurance-number-error" class="govuk-error-message">
-    <span class="govuk-visually-hidden">Error:</span> The sort code does not exist
+    <span class="govuk-visually-hidden">Error:</span> We cannot find this sort code
     </span>
     <input class="govuk-input govuk-input--width-5 govuk-input--error" id="sort-code" name="sort-code" type="text" spellcheck="false" aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['sort-code'] }}">
   </div>

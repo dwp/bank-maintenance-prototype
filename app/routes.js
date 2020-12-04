@@ -33,6 +33,10 @@ router.post('/find-account', function (req, res) {
     res.redirect('new-account/validation/enter-sort-code')
   }
 
+  else if (sortCode === '999999') {
+    res.redirect('new-account/interruption')
+  }
+
   else {
     res.redirect('new-account/check-answers')
   }
@@ -65,6 +69,10 @@ router.post('/change-account', function (req, res) {
 
   else if (sortCode === '') {
     res.redirect('change-account/validation/enter-sort-code')
+  }
+
+  else if (sortCode === '999999') {
+    res.redirect('change-account/interruption')
   }
 
   else {
