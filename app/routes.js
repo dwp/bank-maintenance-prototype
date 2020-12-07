@@ -34,7 +34,7 @@ router.post('/find-account', function (req, res) {
   }
 
   else if (sortCode === '555555') {
-    res.redirect('new-account/validation/account-number-does-not-match')
+    res.redirect('new-account/validation/account-number-does-not-exist')
   }
 
   else if (sortCode === '') {
@@ -80,7 +80,7 @@ router.post('/change-account', function (req, res) {
   }
 
   else if (sortCode === '555555') {
-    res.redirect('change-account/validation/account-number-does-not-match')
+    res.redirect('change-account/validation/account-number-does-not-exist')
   }
 
   else if (sortCode === '') {
