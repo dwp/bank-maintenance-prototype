@@ -19,50 +19,36 @@ Bank Maintenance
 {% block content %}
 
 <form action="/change-account" method="post" novalidate>
+  <h1 class="govuk-heading-l">
+    We cannot use the account details you entered
+  </h1>
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      </legend>
+      <h2 class="govuk-heading-m">If you continue with your application, and it is approved, we will phone you to take your bank or building society account details.</h2>
+      <p class="govuk-body">Do you want to try entering your account details again first?</p>
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+          <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+            Yes, I want to enter my account details again
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+          <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+            No, I want to continue with my application now
+          </label>
+        </div>
 
-  <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <div class="govuk-panel govuk-panel--interruption">
-        <fieldset class="govuk-fieldset" aria-describedby="start_new_claim">
-
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-              <h1 class="govuk-heading-xl" id="start_new_claim">
-                We cannot use the account details you entered
-              </h1>
-            </legend>
-
-            <h2 class="govuk-heading-m">
-              If you continue with your application, and it is approved, we will phone you to take your bank or building society account details.
-            </h2>
-
-            <h3 class="govuk-heading-m">
-              Do you want to try entering your account details again first?
-            </h3>
-
-          <div class="govuk-radios govuk-!-margin-bottom-9">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="yes-continue" name="continue" type="radio" value="Yes">
-                <label class="govuk-label govuk-radios__label" for="yes-continue">
-                  Yes, I want to enter my account details again
-                </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="no-back" name="continue" type="radio" value="No">
-                <label class="govuk-label govuk-radios__label" for="no-back">
-                  No, I want to continue with my application now
-                </label>
-            </div>
-          </div>
-
-        </fieldset>
-
-        <button class="govuk-button" data-module="govuk-button">
-          Continue
-        </button>
-
-    </div>
+    </fieldset>
   </div>
-</div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
 
 </form>
 
