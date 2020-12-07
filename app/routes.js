@@ -29,6 +29,14 @@ router.post('/find-account', function (req, res) {
     res.redirect('new-account/validation/sort-code-does-not-exist')
   }
 
+  else if (sortCode === '444444') {
+    res.redirect('new-account/validation/roll-number-format-error')
+  }
+
+  else if (sortCode === '555555') {
+    res.redirect('new-account/validation/account-number-does-not-match')
+  }
+
   else if (sortCode === '') {
     res.redirect('new-account/validation/enter-sort-code')
   }
@@ -67,6 +75,14 @@ router.post('/change-account', function (req, res) {
     res.redirect('change-account/validation/sort-code-does-not-exist')
   }
 
+  else if (sortCode === '444444') {
+    res.redirect('change-account/validation/roll-number-format-error')
+  }
+
+  else if (sortCode === '555555') {
+    res.redirect('change-account/validation/account-number-does-not-match')
+  }
+
   else if (sortCode === '') {
     res.redirect('change-account/validation/enter-sort-code')
   }
@@ -76,6 +92,28 @@ router.post('/change-account', function (req, res) {
   }
 
   else {
+    res.redirect('change-account/check-answers')
+  }
+})
+
+router.post('/new-interruption', function (req, res) {
+
+  const newInterruption = req.session.data['interruption']
+
+  if (newInterruption === 'yes') {
+    res.redirect('new-account/bank-details')
+  } else {
+    res.redirect('new-account/check-answers')
+  }
+})
+
+router.post('/change-interruption', function (req, res) {
+
+  const changeInterruption = req.session.data['interruption']
+
+  if (changeInterruption === 'yes') {
+    res.redirect('change-account/bank-details')
+  } else {
     res.redirect('change-account/check-answers')
   }
 })

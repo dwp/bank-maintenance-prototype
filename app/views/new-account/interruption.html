@@ -18,7 +18,7 @@ Bank Maintenance
 
 {% block content %}
 
-<form action="/new-account" method="post" novalidate>
+<form action="/new-interruption" method="post" novalidate>
   <h1 class="govuk-heading-l">
     We cannot use the account details you entered
   </h1>
@@ -26,18 +26,18 @@ Bank Maintenance
     <fieldset class="govuk-fieldset">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       </legend>
-      <h2 class="govuk-heading-m">If you continue with your application, and it is approved, we will phone you to take your bank or building society account details.</h2>
+      <h2 class="govuk-heading-m">If you continue with your application, and it is approved, we will contact you to take your bank or building society account details.</h2>
       <p class="govuk-body">Do you want to try entering your account details again first?</p>
       <div class="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
-          <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+          <input class="govuk-radios__input" id="yes" name="interruption" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="yes">
             Yes, I want to enter my account details again
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
-          <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+          <input class="govuk-radios__input" id="no" name="interruption" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="no">
             No, I want to continue with my application now
           </label>
         </div>
