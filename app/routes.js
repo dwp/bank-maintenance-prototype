@@ -103,7 +103,7 @@ router.post('/new-interruption', function (req, res) {
   if (newInterruption === 'yes') {
     res.redirect('new-account/bank-details')
   } else {
-    res.redirect('new-account/check-answers')
+    res.redirect('new-account/continue-app')
   }
 })
 
@@ -114,7 +114,7 @@ router.post('/change-interruption', function (req, res) {
   if (changeInterruption === 'yes') {
     res.redirect('change-account/bank-details')
   } else {
-    res.redirect('change-account/check-answers')
+    res.redirect('change-account/continue-app')
   }
 })
 
