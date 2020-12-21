@@ -24,7 +24,7 @@ Bank Maintenance
       titleText: "There is a problem",
       errorList: [
         {
-          text: "We cannot find this account number - check the sort code and account number and try again",
+          text: "We do not recognise this account number - check the sort code and account number and try again",
           href: "#passport-issued-error"
         }
       ]
@@ -56,7 +56,7 @@ Bank Maintenance
       Must be between 6 and 8 digits long
     </div>
     <span id="national-insurance-number-error" class="govuk-error-message">
-    <span class="govuk-visually-hidden">Error:</span> We cannot find this account number - check the sort code and account number and try again
+    <span class="govuk-visually-hidden">Error:</span> We do not recognise this account number - check the sort code and account number and try again
     </span>
     <input class="govuk-input govuk-input--width-10 govuk-input--error" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['account-number'] }}">
   </div>
