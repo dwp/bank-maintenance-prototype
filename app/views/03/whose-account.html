@@ -1,0 +1,60 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Bank Maintenance
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  "tag": {
+    "text": "prototype"
+  },
+  "html": "This is a prototype of a new service."
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<form action="whose-account-is-it" method="post" novalidate>
+
+  <div class="govuk-grid-row">
+     <div class="govuk-grid-column-two-thirds-from-desktop">
+
+       <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Is the account in your name?
+      </h1>
+    </legend>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="yes" name="whose-account" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="yes">
+          Yes, it's in my name
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="no" name="whose-account" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="no">
+          No, it's in someone else's name
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+
+       <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+       </div>
+       </div>
+       </form>
+
+
+{% endblock %}

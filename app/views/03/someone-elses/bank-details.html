@@ -18,7 +18,7 @@ Bank Maintenance
 
 {% block content %}
 
-<form action="find-account" method="post" novalidate>
+<form action="change-account" method="post">
 
   <h1 class="govuk-heading-l">Bank or building society account details</h1>
 
@@ -33,7 +33,7 @@ Bank Maintenance
       Sort code
     </label>
     <div id="sort-code-hint" class="govuk-hint">
-      It must be 6 digits long, and you can use spaces, hyphens or dashes
+      Must be 6 digits long
     </div>
     <input class="govuk-input govuk-input--width-5" id="sort-code" name="sort-code" type="text" spellcheck="false" aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['sort-code'] }}">
   </div>

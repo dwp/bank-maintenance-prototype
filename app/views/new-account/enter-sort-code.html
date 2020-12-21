@@ -20,6 +20,16 @@ Bank Maintenance
 
 <form action="find-account" method="post" novalidate>
 
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+        {
+          text: "Enter a sort code",
+          href: "#passport-issued-error"
+        }
+      ]
+    }) }}
+
   <h1 class="govuk-heading-l">Bank or building society account details</h1>
 
   <div class="govuk-form-group">
@@ -28,14 +38,17 @@ Bank Maintenance
     </label>
     <input class="govuk-input" id="name-on-the-account" name="name-on-the-account" type="text" spellcheck="false" value="{{ data['name-on-the-account'] }}"></div>
 
-  <div class="govuk-form-group">
+  <div class="govuk-form-group govuk-form-group--error">
     <label class="govuk-label" for="sort-code">
       Sort code
     </label>
     <div id="sort-code-hint" class="govuk-hint">
       It must be 6 digits long, and you can use spaces, hyphens or dashes
     </div>
-    <input class="govuk-input govuk-input--width-5" id="sort-code" name="sort-code" type="text" spellcheck="false" aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['sort-code'] }}">
+    <span id="national-insurance-number-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Enter a sort code
+    </span>
+    <input class="govuk-input govuk-input--width-5 govuk-input--error" id="sort-code" name="sort-code" type="text" spellcheck="false" aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['sort-code'] }}">
   </div>
 
   <div class="govuk-form-group">

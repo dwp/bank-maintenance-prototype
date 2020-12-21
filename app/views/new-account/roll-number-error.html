@@ -20,6 +20,16 @@ Bank Maintenance
 
 <form action="find-account" method="post" novalidate>
 
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+        {
+          text: "Enter a building society roll number",
+          href: "#passport-issued-error"
+        }
+      ]
+    }) }}
+
   <h1 class="govuk-heading-l">Bank or building society account details</h1>
 
   <div class="govuk-form-group">
@@ -48,14 +58,17 @@ Bank Maintenance
     <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['account-number'] }}">
   </div>
 
-  <div class="govuk-form-group">
+  <div class="govuk-form-group govuk-form-group--error">
     <label class="govuk-label" for="roll-number">
       Building society roll number (if you have one)
     </label>
     <div id="roll-number-hint" class="govuk-hint">
       You can find it on your card, statement or passbook
     </div>
-    <input class="govuk-input govuk-input--width-10" id="roll-number" name="roll-number" type="text" spellcheck="false" aria-describedby="roll-number-hint" value="{{ data['roll-number'] }}">
+    <span id="national-insurance-number-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Enter a building society roll number
+    </span>
+    <input class="govuk-input govuk-input--width-10 govuk-input--error" id="roll-number" name="roll-number" type="text" spellcheck="false" aria-describedby="roll-number-hint" value="{{ data['roll-number'] }}">
   </div>
 
   <button class="govuk-button" data-module="govuk-button">

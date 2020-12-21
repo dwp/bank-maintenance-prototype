@@ -18,13 +18,13 @@ Bank Maintenance
 
 {% block content %}
 
-<form action="/find-account" method="post" novalidate>
+<form action="change-account" method="post" novalidate>
 
     {{ govukErrorSummary({
       titleText: "There is a problem",
       errorList: [
         {
-          text: "We cannot find this sort code - check it and try again",
+          text: "This sort code is out of date - check it with your bank or building society and try again",
           href: "#passport-issued-error"
         }
       ]
@@ -46,7 +46,7 @@ Bank Maintenance
       Must be 6 digits long
     </div>
     <span id="national-insurance-number-error" class="govuk-error-message">
-    <span class="govuk-visually-hidden">Error:</span> We cannot find this sort code - check it and try again
+    <span class="govuk-visually-hidden">Error:</span> This sort code is out of date - check it with your bank or building society and try again
     </span>
     <input class="govuk-input govuk-input--width-5 govuk-input--error" id="sort-code" name="sort-code" type="text" spellcheck="false" aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['sort-code'] }}">
   </div>

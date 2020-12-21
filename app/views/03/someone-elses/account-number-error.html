@@ -18,7 +18,17 @@ Bank Maintenance
 
 {% block content %}
 
-<form action="find-account" method="post" novalidate>
+<form action="change-account" method="post" novalidate>
+
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+        {
+          text: "Account number must be between 6 and 8 digits",
+          href: "#passport-issued-error"
+        }
+      ]
+    }) }}
 
   <h1 class="govuk-heading-l">Bank or building society account details</h1>
 
@@ -33,19 +43,22 @@ Bank Maintenance
       Sort code
     </label>
     <div id="sort-code-hint" class="govuk-hint">
-      It must be 6 digits long, and you can use spaces, hyphens or dashes
+      Must be 6 digits long
     </div>
     <input class="govuk-input govuk-input--width-5" id="sort-code" name="sort-code" type="text" spellcheck="false" aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['sort-code'] }}">
   </div>
 
-  <div class="govuk-form-group">
+  <div class="govuk-form-group govuk-form-group--error">
     <label class="govuk-label" for="account-number">
       Account number
     </label>
     <div id="account-number-hint" class="govuk-hint">
       Must be between 6 and 8 digits long
     </div>
-    <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['account-number'] }}">
+    <span id="national-insurance-number-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Account number must be between 6 and 8 digits
+    </span>
+    <input class="govuk-input govuk-input--width-10 govuk-input--error" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['account-number'] }}">
   </div>
 
   <div class="govuk-form-group">
