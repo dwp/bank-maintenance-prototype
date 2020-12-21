@@ -10,18 +10,18 @@ router.post('/whose-account-is-it', function (req, res) {
   if (whoseAccount === 'yes') {
     res.redirect('my-name/bank-details')
   } else {
-    res.redirect('bank-details')
+    res.redirect('someone-elses/bank-details')
   }
 })
 
 // Validation routing depending on sort code that's entered
 
-router.post('/change-account', function (req, res) {
+router.post('/someone-elses/someone-else', function (req, res) {
 
   let sortCode = req.session.data['sort-code']
 
   if (sortCode === '112233') {
-    res.redirect('./account-number-error')
+    res.redirect('account-number-error')
   }
 
   else if (sortCode === '1122334') {
@@ -61,44 +61,44 @@ router.post('/change-account', function (req, res) {
   }
 })
 
-router.post('/change-my-name', function (req, res, next) {
+router.post('/my-name/change-my-name', function (req, res, next) {
 
   let sortCode2 = req.session.data['sort-code2']
 
   if (sortCode2 === '112233') {
-    res.redirect('my-name/account-number-error')
+    res.redirect('account-number-error')
   }
 
   else if (sortCode2 === '1122334') {
-    res.redirect('my-name/sort-code-error')
+    res.redirect('sort-code-error')
   }
 
   else if (sortCode2 === '111111') {
-    res.redirect('my-name/roll-number-error')
+    res.redirect('roll-number-error')
   }
 
   else if (sortCode2 === '222222') {
-    res.redirect('my-name/sort-code-changed')
+    res.redirect('sort-code-changed')
   }
 
   else if (sortCode2 === '333333') {
-    res.redirect('my-name/sort-code-does-not-exist')
+    res.redirect('sort-code-does-not-exist')
   }
 
   else if (sortCode2 === '444444') {
-    res.redirect('my-name/roll-number-format-error')
+    res.redirect('roll-number-format-error')
   }
 
   else if (sortCode2 === '555555') {
-    res.redirect('my-name/account-number-does-not-exist')
+    res.redirect('account-number-does-not-exist')
   }
 
   else if (sortCode2 === '') {
-    res.redirect('my-name/enter-sort-code')
+    res.redirect('enter-sort-code')
   }
 
   else if (sortCode2 === '999999') {
-    res.redirect('my-name/interruption')
+    res.redirect('interruption')
   }
 
   else {
@@ -106,7 +106,18 @@ router.post('/change-my-name', function (req, res, next) {
   }
 })
 
-router.post('/change-interruption', function (req, res) {
+router.post('/my-name/change-interruption', function (req, res) {
+
+  const changeInterruption = req.session.data['interruption']
+
+  if (changeInterruption === 'yes') {
+    res.redirect('bank-details')
+  } else {
+    res.redirect('continue-app')
+  }
+})
+
+router.post('/someone-elses/change-interruption', function (req, res) {
 
   const changeInterruption = req.session.data['interruption']
 

@@ -31,13 +31,6 @@ Bank Maintenance
     }) }}
 
   <h1 class="govuk-heading-l">Bank or building society account details</h1>
-
-  <div class="govuk-form-group">
-    <label class="govuk-label" for="name-on-the-account">
-      Name on the account
-    </label>
-    <input class="govuk-input" id="name-on-the-account" name="name-on-the-account" type="text" spellcheck="false" value="{{ data['name-on-the-account'] }}"></div>
-
   <div class="govuk-form-group">
     <label class="govuk-label" for="sort-code">
       Sort code
@@ -45,7 +38,7 @@ Bank Maintenance
     <div id="sort-code-hint" class="govuk-hint">
       Must be 6 digits long
     </div>
-    <input class="govuk-input govuk-input--width-5" id="sort-code2" name="sort-code2" type="text" spellcheck="false" aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['sort-code'] }}">
+    <input class="govuk-input govuk-input--width-5" id="sort-code2" name="sort-code2" type="text" spellcheck="false" aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['sort-code2'] }}">
   </div>
 
   <div class="govuk-form-group govuk-form-group--error">

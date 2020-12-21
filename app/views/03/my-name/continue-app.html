@@ -18,7 +18,6 @@ Bank Maintenance
 
 {% block content %}
 
-<form action="bank-details" method="post" novalidate>
   <h1 class="govuk-heading-l">
     You would now continue to your application
   </h1>
@@ -28,10 +27,7 @@ Bank Maintenance
 
   {{ govukButton({
     "text": "Start again",
-    "href": "bank-details"
+    "href": "../whose-account"
   }) }}
-
-
-</form>
 
 {% endblock %}
