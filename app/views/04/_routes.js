@@ -52,10 +52,6 @@ router.post('/someone-elses/someone-else', function (req, res) {
     res.redirect('enter-sort-code')
   }
 
-  else if (sortCode === '999999') {
-    res.redirect('interruption')
-  }
-
   else if (sortCode === '666666') {
     res.redirect('interruption-success')
   }
@@ -103,10 +99,6 @@ router.post('/my-name/change-my-name', function (req, res, next) {
 
   else if (sortCode2 === '') {
     res.redirect('enter-sort-code')
-  }
-
-  else if (sortCode2 === '999999') {
-    res.redirect('interruption')
   }
 
   else {
