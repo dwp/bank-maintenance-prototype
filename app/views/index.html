@@ -65,7 +65,11 @@ Bank Maintenance
         </div>
 
         <h3 class="govuk-heading-s">Changes</h3>
-        <p>N/A</p>
+        <ul class="govuk-list govuk-list--bullet">
+        <li>included new 'interruption screen' layout</li>
+        <li>changed when 'interruption screen' appears</li>
+        <li>added question about whose account it is</li>
+        </ul>
 
         <h3 class="govuk-heading-s">Hypothesis</h3>
         <p>Due to be updated</p>
@@ -73,18 +77,10 @@ Bank Maintenance
         <h3 class="govuk-heading-s">Research notes</h3>
         <p>Due to be updated</p>
 
-        <h4 class="govuk-heading-s">Add new bank account</h4>
 
         {{ govukButton({
           text: "View prototype",
-          href: "/new-account/bank-details"
-        }) }}
-
-        <h4 class="govuk-heading-s">Change bank account</h4>
-
-        {{ govukButton({
-          text: "View prototype",
-          href: "/change-account/start"
+          href: "/04/whose-account"
         }) }}
 
         <h4 class="govuk-heading-s">Prototype sort codes</h4>
@@ -105,6 +101,79 @@ Bank Maintenance
 
     </div>
     {# End of most recent box #}
+
+    <h2 class="govuk-heading-l">Previous versions</h2>
+
+          {# Start of hidden panel #}
+          <details class="govuk-details all-versions">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Show all versions
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+
+
+            {# Start of prototype write up #}
+
+            <div class="prototype-write-up">
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                  <dl>
+                    <dt class="govuk-heading-s">Date of release</dt>
+                    <dd class="govuk-body">TBC</dd>
+                  </dl>
+                </div>
+
+                <div class="govuk-grid-column-one-third">
+                  <dl>
+                    <dt class="govuk-heading-s">Feature</dt>
+                    <dd class="govuk-body">Bank Maintenance UI</dd>
+                  </dl>
+                </div>
+
+                <div class="govuk-grid-column-one-third">
+                  <dl>
+                    <dt class="govuk-heading-s">Related stories</dt>
+                    <dd class="govuk-body">TBC</dd>
+                  </dl>
+                </div>
+              </div>
+
+              <h3 class="govuk-heading-s">Changes</h3>
+              <p>N/A</p>
+
+              <h3 class="govuk-heading-s">Hypothesis</h3>
+              <p>Due to be updated</p>
+
+              <h3 class="govuk-heading-s">Research notes</h3>
+              <p>Due to be updated</p>
+
+              <h4 class="govuk-heading-s">Change bank account</h4>
+
+              {{ govukButton({
+                text: "View prototype",
+                href: "/change-account/start"
+              }) }}
+
+              <h4 class="govuk-heading-s">Prototype sort codes</h4>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>112233 - account number validation</li>
+                <li>1122334 - sort code validation</li>
+                <li>111111 - roll number validation</li>
+                <li>222222 - sort code changed validation</li>
+                <li>333333 - sort code doesn't exist validation</li>
+                <li>444444 - roll number format validation</li>
+                <li>555555 - account number doesn't match sort code validation</li>
+                <li>999999 - interruption screen (radio buttons don't go anywhere yet)</li>
+                <li>Empty sort code field - enter sort code validation</li>
+              </ul>
+
+            </div>
+            {# End of prototype write up #}
+
+        </details>
+        {# End of hidden panel #}
 
   </div>
 </div>

@@ -1,0 +1,33 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Bank Maintenance
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  "tag": {
+    "text": "prototype"
+  },
+  "html": "This is a prototype of a new service."
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-l">
+    You would now continue to your application
+  </h1>
+  <div class="govuk-form-group">
+    <p class="govuk-body">This is only a prototype but, after choosing not to enter bank details, a user would continue their application.</p>
+  </div>
+
+  {{ govukButton({
+    "text": "Start again",
+    "href": "../whose-account"
+  }) }}
+
+{% endblock %}
