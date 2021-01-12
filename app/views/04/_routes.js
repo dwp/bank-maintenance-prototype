@@ -56,6 +56,10 @@ router.post('/someone-elses/someone-else', function (req, res) {
     res.redirect('interruption')
   }
 
+  else if (sortCode === '666666') {
+    res.redirect('interruption-success')
+  }
+
   else {
     res.redirect('check-answers')
   }
@@ -91,6 +95,10 @@ router.post('/my-name/change-my-name', function (req, res, next) {
 
   else if (sortCode2 === '555555') {
     res.redirect('account-number-does-not-exist')
+  }
+
+  else if (sortCode2 === '666666') {
+    res.redirect('interruption-success')
   }
 
   else if (sortCode2 === '') {
