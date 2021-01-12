@@ -20,60 +20,64 @@ Bank Maintenance
 
 <form action="someone-else" method="post" novalidate>
 
-    {{ govukErrorSummary({
-      titleText: "There is a problem",
-      errorList: [
-        {
-          text: "We cannot find this sort code - check it and try again",
-          href: "#passport-issued-error"
-        }
-      ]
-    }) }}
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      We do not recognise this sort code
+    </h1>
 
-  <h1 class="govuk-heading-l">Bank or building society account details</h1>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name on the account
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['name-on-the-account'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Sort code
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['sort-code'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Account number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['account-number'] }}
+        </dd>
+      </div>
+    </dl>
 
-  <div class="govuk-form-group">
-    <label class="govuk-label" for="name-on-the-account">
-      Name on the account
-    </label>
-    <input class="govuk-input" id="name-on-the-account" name="name-on-the-account" type="text" spellcheck="false" value="{{ data['name-on-the-account'] }}"></div>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        </legend>
+        <h2 class="govuk-heading-m">Do you want to try entering your account details again?</h2>
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="yes" name="interruption" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="yes">
+              Yes, I want to enter my account details again
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="no" name="interruption" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="no">
+              No, you can contact me for my account details if my application is approved
+            </label>
+          </div>
 
-  <div class="govuk-form-group govuk-form-group--error">
-    <label class="govuk-label" for="sort-code">
-      Sort code
-    </label>
-    <div id="sort-code-hint" class="govuk-hint">
-      Must be 6 digits long
+      </fieldset>
     </div>
-    <span id="national-insurance-number-error" class="govuk-error-message">
-    <span class="govuk-visually-hidden">Error:</span> We cannot find this sort code - check it and try again
-    </span>
-    <input class="govuk-input govuk-input--width-5 govuk-input--error" id="sort-code" name="sort-code" type="text" spellcheck="false" aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['sort-code'] }}">
-  </div>
 
-  <div class="govuk-form-group">
-    <label class="govuk-label" for="account-number">
-      Account number
-    </label>
-    <div id="account-number-hint" class="govuk-hint">
-      Must be between 6 and 8 digits long
-    </div>
-    <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['account-number'] }}">
-  </div>
-
-  <div class="govuk-form-group">
-    <label class="govuk-label" for="roll-number">
-      Building society roll number (if you have one)
-    </label>
-    <div id="roll-number-hint" class="govuk-hint">
-      You can find it on your card, statement or passbook
-    </div>
-    <input class="govuk-input govuk-input--width-10" id="roll-number" name="roll-number" type="text" spellcheck="false" aria-describedby="roll-number-hint" value="{{ data['roll-number'] }}">
-  </div>
-
-  <button class="govuk-button" data-module="govuk-button">
-    Continue
-  </button>
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
 
 </form>
 
