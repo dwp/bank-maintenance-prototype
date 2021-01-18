@@ -45,7 +45,7 @@ router.post('/someone-elses/someone-else', function (req, res) {
   }
 
   else if (sortCode === '555555') {
-    res.redirect('account-number-does-not-exist')
+    res.redirect('account-number-does-not-match')
   }
 
   else if (sortCode === '') {
@@ -90,7 +90,7 @@ router.post('/my-name/change-my-name', function (req, res, next) {
   }
 
   else if (sortCode2 === '555555') {
-    res.redirect('account-number-does-not-exist')
+    res.redirect('account-number-does-not-match')
   }
 
   else if (sortCode2 === '666666') {
