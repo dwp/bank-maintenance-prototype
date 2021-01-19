@@ -114,7 +114,7 @@ router.post('/someone-elses/change-interruption', function (req, res) {
   if (changeInterruption === 'yes') {
     res.redirect('bank-details')
   } else {
-    res.redirect('continue-app')
+    res.redirect('../carers-allowance/declaration-no-details')
   }
 })
 
