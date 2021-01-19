@@ -3,16 +3,6 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
-router.post('/whose-account-is-it', function (req, res) {
-
-  const whoseAccount = req.session.data['whose-account']
-
-  if (whoseAccount === 'yes') {
-    res.redirect('my-name/bank-details')
-  } else {
-    res.redirect('someone-elses/bank-details')
-  }
-})
 
 // Validation routing depending on sort code that's entered
 
