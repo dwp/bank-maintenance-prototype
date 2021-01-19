@@ -19,28 +19,26 @@ Bank Maintenance
 {% block content %}
 
 <form action="change-interruption" method="post" novalidate>
-
-<div class="govuk-grid-row">
-<div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
   <h1 class="govuk-heading-l">
     Check your bank details before continuing
   </h1>
-
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Bank name
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Nationwide
-        </dd>
-      </div>
+      <dt class="govuk-summary-list__key">
+        Bank name
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Nationwide
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         Name on the account
       </dt>
       <dd class="govuk-summary-list__value">
-        John Smith
+        {{ data['name-on-the-account'] }}
       </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -61,17 +59,16 @@ Bank Maintenance
     </div>
   </dl>
 
-    <p class="govuk-body">You will go back to your Carer's Allowance application after confirming your bank details.</p>
+  <p class="govuk-body">You will go back to your Carer's Allowance application after confirming your bank details.</p>
 
 
-      <button class="govuk-button" data-module="govuk-button">
-        Continue
-      </button>
+  {{ govukButton({
+    text: "Confirm and continue",
+    href: "../carers-allowance/declaration"
+  }) }}
 
-    </div>
-  </div>
-
-
+</div>
+</div>
 </form>
 
 {% endblock %}
