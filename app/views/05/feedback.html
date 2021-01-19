@@ -70,10 +70,10 @@ Bank Maintenance
           }
         }) }}
 
-       <button class="govuk-button" data-module="govuk-button">
-            Send feedback
-          </button>
-
+        {{ govukButton({
+          "text": "Send feedback",
+          "href": "feedback-success"
+        }) }}
        </div>
        </div>
        </form>
