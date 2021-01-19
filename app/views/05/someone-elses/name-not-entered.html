@@ -23,17 +23,9 @@ Bank Maintenance
     {{ govukErrorSummary({
       titleText: "There is a problem",
       errorList: [
-      {
-        text: "Enter a name on the account",
-        href: "#passport-issued-error"
-      },
-      {
-          text: "Enter a sort code",
-          href: "#passport-issued-error"
-        },
         {
-          text: "Enter an account number",
-          href: "#postcode-error"
+          text: "Enter the name on the account",
+          href: "#passport-issued-error"
         }
       ]
     }) }}
@@ -45,34 +37,28 @@ Bank Maintenance
       Name on the account
     </label>
     <span id="national-insurance-number-error" class="govuk-error-message">
-    <span class="govuk-visually-hidden">Error:</span> Enter a name on the account
+    <span class="govuk-visually-hidden">Error:</span> Enter the name on the account
     </span>
     <input class="govuk-input govuk-input--error" id="name-on-the-account" name="name-on-the-account" type="text" spellcheck="false" value="{{ data['name-on-the-account'] }}"></div>
 
-  <div class="govuk-form-group govuk-form-group--error">
+  <div class="govuk-form-group">
     <label class="govuk-label" for="sort-code">
       Sort code
     </label>
     <div id="sort-code-hint" class="govuk-hint">
       It must be 6 digits long, and you can use spaces, hyphens or dashes
     </div>
-    <span id="national-insurance-number-error" class="govuk-error-message">
-    <span class="govuk-visually-hidden">Error:</span> Enter a sort code
-    </span>
-    <input class="govuk-input govuk-input--width-5 govuk-input--error" id="sort-code" name="sort-code" type="text" spellcheck="false" aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['sort-code'] }}">
+    <input class="govuk-input govuk-input--width-5" id="sort-code" name="sort-code" type="text" spellcheck="false" aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['sort-code'] }}">
   </div>
 
-  <div class="govuk-form-group govuk-form-group--error">
+  <div class="govuk-form-group">
     <label class="govuk-label" for="account-number">
       Account number
     </label>
     <div id="account-number-hint" class="govuk-hint">
       Must be between 6 and 8 digits long
     </div>
-    <span id="national-insurance-number-error" class="govuk-error-message">
-    <span class="govuk-visually-hidden">Error:</span> Enter an account number
-    </span>
-    <input class="govuk-input govuk-input--width-10 govuk-input--error" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['account-number'] }}">
+    <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric" value="{{ data['account-number'] }}">
   </div>
 
   <div class="govuk-form-group">
