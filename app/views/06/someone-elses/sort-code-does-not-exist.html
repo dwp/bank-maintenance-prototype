@@ -27,27 +27,21 @@ Bank Maintenance
 
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-  <h1 class="govuk-heading-l">
-    There is a problem with your account details
-  </h1>
 
-  <div class="govuk-warning-text">
-    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-    <strong class="govuk-warning-text__text">
-      <span class="govuk-warning-text__assistive">Warning</span>
-      We do not recognise this roll number.
-    </strong>
-  </div>
+    {{ govukErrorSummary({
+      "titleText": "There is a problem with your bank account details",
+      "errorList": [
+        {
+          "text": "We do not recognise this sort code."
+        }
+      ]
+    }) }}
+
+    <h1 class="govuk-heading-l">
+      Check your bank account details
+    </h1>
 
     <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Bank name
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Nationwide
-        </dd>
-      </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Name on the account
@@ -70,14 +64,6 @@ Bank Maintenance
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data['account-number'] }}
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Roll number
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['roll-number'] }}
         </dd>
       </div>
     </dl>

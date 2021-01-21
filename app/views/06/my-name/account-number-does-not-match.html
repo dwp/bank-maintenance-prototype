@@ -14,28 +14,26 @@ Bank Maintenance
   "html": "This is a prototype of a new service."
 }) }}
 
-{{ govukBackLink({
-  text: "Back",
-  href: "bank-details"
-}) }}
-
 {% endblock %}
 
 {% block content %}
 
 <form action="change-interruption" method="post" novalidate>
 
-  <div class="govuk-grid-row">
+    <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
         There is a problem with your account details
       </h1>
 
-      {{ govukWarningText({
-        text: "This sort code is out of date - check it with your bank or building society",
-        iconFallbackText: "Warning"
-      }) }}
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          We do not recognise this account number.
+        </strong>
+      </div>
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
@@ -51,7 +49,7 @@ Bank Maintenance
             Name on the account
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['name-on-the-account'] }}
+            John Smith
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -59,7 +57,7 @@ Bank Maintenance
             Sort code
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['sort-code'] }}
+            {{ data['sort-code2'] }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -91,15 +89,14 @@ Bank Maintenance
               </label>
             </div>
 
-          </fieldset>
-        </div>
+        </fieldset>
+      </div>
 
-        <button class="govuk-button" data-module="govuk-button">
-          Continue
-        </button>
-        </div>
-        </div>
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
 
-      </form>
 
-      {% endblock %}
+</form>
+
+{% endblock %}

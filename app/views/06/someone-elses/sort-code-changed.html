@@ -28,14 +28,18 @@ Bank Maintenance
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        There is a problem with your account details
-      </h1>
-
-      {{ govukWarningText({
-        text: "This sort code is out of date - check it with your bank or building society",
-        iconFallbackText: "Warning"
+      {{ govukErrorSummary({
+        "titleText": "There is a problem with your bank account details",
+        "errorList": [
+          {
+            "text": "This sort code is out of date - check it with your bank or building society."
+          }
+        ]
       }) }}
+
+      <h1 class="govuk-heading-l">
+        Check your bank account details
+      </h1>
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">

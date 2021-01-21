@@ -1,0 +1,66 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Bank Maintenance
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  "tag": {
+    "text": "prototype"
+  },
+  "html": "This is a prototype of a new service."
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+     <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        {{ govukRadios({
+          idPrefix: "how-satisfied",
+          name: "how-satisfied",
+          fieldset: {
+            legend: {
+              text: "Where should we send your Carer’s Allowance?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "It can be paid into someone else’s account."
+          },
+          items: [
+            {
+              value: "UK bank or building society account",
+              text: "UK bank or building society account"
+            },
+            {
+              value: "Post Office card account",
+              text: "Post Office card account"
+            },
+            {
+              value: "I don’t have access to either",
+              text: "I don’t have access to either"
+            }
+          ]
+        }) }}
+
+        <div class="govuk-inset-text">
+           To add your bank account details, you will be sent to our payment service after selecting 'Continue'.
+        </div>
+
+        {{ govukButton({
+          text: "Continue",
+          href: "../someone-elses/bank-details"
+        }) }}
+
+       </div>
+       </div>
+
+
+{% endblock %}
