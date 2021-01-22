@@ -1,0 +1,88 @@
+
+{% extends "layout.html" %}
+
+{% block header %}
+{{ govukHeader({
+  "serviceName": "Change bank account details",
+  "serviceUrl": "/components/header"
+}) }}
+{% endblock %}
+
+{% block pageTitle %}
+Bank Maintenance
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  "tag": {
+    "text": "prototype"
+  },
+  "html": "This is a prototype of a new service."
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "bank-details"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<form action="change-interruption" method="post" novalidate>
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+  <h1 class="govuk-heading-l">
+    Your bank account details are valid
+  </h1>
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Bank name
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Nationwide
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Name on the account
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['name-on-the-account'] }}
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Sort code
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['sort-code'] }}
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Account number
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['account-number'] }}
+      </dd>
+    </div>
+  </dl>
+
+  <div class="govuk-inset-text">
+    You will go back to your Carer's Allowance application after confirming your bank details.
+  </div>
+
+  {{ govukButton({
+    text: "Confirm and continue",
+    href: "../carers-allowance/declaration"
+  }) }}
+
+</div>
+</div>
+</form>
+
+{% endblock %}
