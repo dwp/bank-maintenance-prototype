@@ -1,0 +1,56 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Bank Maintenance
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  "tag": {
+    "text": "prototype"
+  },
+  "html": "This is a prototype of a new service."
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<form action="bank-details" method="post" novalidate>
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+  <h1 class="govuk-heading-l">Sorry, there is a problem with the service</h1>
+        <p class="govuk-body">Try again later.</p>
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            </legend>
+            <h2 class="govuk-heading-m">Do you want us to contact you for your account details if your application is approved?</h2>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="yes" name="interruption" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="yes">
+                  Yes, you can contact me for my account details
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="no" name="interruption" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="no">
+                  No, I will try again later
+                </label>
+              </div>
+
+          </fieldset>
+        </div>
+
+      </div>
+      </div>
+
+
+</form>
+
+{% endblock %}
