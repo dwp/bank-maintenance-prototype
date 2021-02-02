@@ -14,10 +14,10 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/task-list";
 @import "patterns/related-items";
 @import "patterns/index";
+@import "patterns/key-details-bar";
 
 // Components that aren't in Frontend
 @import "components/cookie-banner";
 @import "components/interruption-panel";
-@import "components/key-details";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
