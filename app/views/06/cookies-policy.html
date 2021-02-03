@@ -1,0 +1,44 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Bank Maintenance
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  "tag": {
+    "text": "prototype"
+  },
+  "html": "This is a prototype of a new service."
+}) }}
+
+<a href="#" class="govuk-back-link">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<form action="bank-details" method="post" novalidate>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">How we use cookies</h1>
+      <p class="govuk-body">A cookie is a small file which is stored on your device for a short time to make this service work.</p>
+      <p class="govuk-body">We use cookies that are:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>essential for the service to work, like remembering your answers to certain questions</li>
+        <li>optional and will not stop the service from working, but will give us information to help us make it better</li>
+      </ul>
+      <p class="govuk-body">We will not:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>use any essential cookies until you use the service</li>
+        <li>use any optional cookies unless you tell us we can</li>
+        <li>be able identify you through using cookies</li>
+      </ul>
+      <p class="govuk-body"><a href="details-about-cookies">Find out more about cookies on this service</a></p>
+      </div>
+    </div>
+  </form>
+
+  {% endblock %}
