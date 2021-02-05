@@ -1,0 +1,74 @@
+
+{% extends "layout.html" %}
+
+{% block header %}
+{{ govukHeader({
+  "serviceName": "Change bank account details",
+  "serviceUrl": "/index"
+}) }}
+{% endblock %}
+
+{% block pageTitle %}
+Bank Maintenance
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h1 class="govuk-heading-l">Joe Bloggs</h1>
+
+        <p class="govuk-body govuk-!-font-size-24">QQ 12 34 56 X</p>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Bank name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Nationwide
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name on the account
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Joe Bloggs
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Sort code
+            </dt>
+            <dd class="govuk-summary-list__value">
+              653376
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Account number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              11223344
+            </dd>
+          </div>
+        </dl>
+          <input type="hidden" name="answers-checked" value="true">
+
+          <a href="bank-details" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+            Change bank details
+          </a>
+
+      </div>
+    </div>
+</div>
+
+{% endblock %}
