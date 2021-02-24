@@ -38,7 +38,7 @@ Bank Maintenance
   <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
   <h1 class="govuk-heading-l">
-    The bank account details are valid
+    We have confirmed these account details
   </h1>
 <br>
   <div class="govuk-grid-row">
@@ -91,13 +91,16 @@ Bank Maintenance
 <div class="govuk-button-group">
   {{ govukButton({
     text: "Save changes",
+    classes: "govuk-!-margin-right-2",
     href: "../winter-fuel/results-success"
   }) }}
 
-  <a class="govuk-link" href="../winter-fuel/results">Cancel</a>
+  {{ govukButton({
+    text: "Cancel changes",
+    classes: "govuk-button--secondary",
+    href: "../winter-fuel/results"
+  }) }}
 </div>
-
-</form>
 
 
 {% endblock %}
