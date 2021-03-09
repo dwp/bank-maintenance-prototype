@@ -1,0 +1,98 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Bank Maintenance
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  "tag": {
+    "text": "prototype"
+  },
+  "html": "This is a prototype of a new service."
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+     <div class="govuk-grid-column-two-thirds-from-desktop">
+
+       <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#passport-issued-error">Select how satisfied you are before sending</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+       <h1 class="govuk-heading-l">Give feedback on entering your bank details</h1>
+
+        {{ govukRadios({
+          idPrefix: "how-satisfied",
+          name: "how-satisfied",
+          fieldset: {
+            legend: {
+              text: "Overall, how did you feel about the service you received today?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          errorMessage: {
+            text: "Select how satisfied you are before sending"
+          },
+          items: [
+            {
+              value: "Very satisfied",
+              text: "Very satisfied"
+            },
+            {
+              value: "Satisfied",
+              text: "Satisfied"
+            },
+            {
+              value: "Neither satisfied nor dissatisfied",
+              text: "Neither satisfied nor dissatisfied"
+            },
+            {
+              value: "Dissatisfied",
+              text: "Dissatisfied"
+            },
+            {
+              value: "Very dissatisfied",
+              text: "Very dissatisfied"
+            }
+          ]
+        }) }}
+
+        {{ govukCharacterCount({
+          name: "with-hint",
+          id: "with-hint",
+          maxlength: 1200,
+          label: {
+            text: "How could we improve this service?",
+            classes: "govuk-label--m"
+          },
+          hint: {
+            text: "Do not include personal or financial information like your National Insurance number or credit card details."
+          }
+        }) }}
+
+        {{ govukButton({
+          "text": "Send feedback",
+          "href": "feedback-success"
+        }) }}
+       </div>
+       </div>
+       </form>
+
+
+{% endblock %}
