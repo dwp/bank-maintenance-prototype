@@ -28,18 +28,18 @@ Bank Maintenance
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {{ govukErrorSummary({
-      "titleText": "There is a problem with your bank account details",
-      "errorList": [
-        {
-          "text": "We do not recognise this sort code."
-        }
-      ]
+    <h1 class="govuk-heading-l">
+      There is a problem with these account details
+    </h1>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+    {{ govukWarningText({
+      text: "We do not recognise this sort code.",
+      iconFallbackText: "Warning"
     }) }}
 
-    <h1 class="govuk-heading-l">
-      Check your bank account details
-    </h1>
+    <hr class="govuk-section-break govuk-section-break--s govuk-section-break">
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
@@ -72,7 +72,7 @@ Bank Maintenance
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         </legend>
-        <h2 class="govuk-heading-m">Do you want to try entering your account details again?</h2>
+        <h3 class="govuk-heading-s">Do you want to try entering your account details again?</h3>
         <div class="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="yes" name="interruption" type="radio" value="yes">
