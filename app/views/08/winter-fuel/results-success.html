@@ -47,7 +47,7 @@
 
        <h1 class="govuk-heading-l">Theodora Best</h1>
 
-       <p class="govuk-body govuk-!-font-size-24">XX 12 34 56</p>
+       <p class="govuk-body govuk-!-font-size-24">XX 12 34 56 X</p>
 
        <br>
 
@@ -61,44 +61,42 @@
           </div>
         </div>
 
-        {{ govukSummaryList({
-          rows: [
-            {
-              key: {
-                text: "Bank or building society"
-              },
-              value: {
-                text: "Nationwide"
-              }
-            },
-            {
-              key: {
-                text: "Name on the account"
-              },
-              value: {
-                text: "Theodora Best"
-              }
-            },
-            {
-              key: {
-                text: "Sort code"
-              },
-              value: {
-                html: "00 11 22"
-              }
-            },
-            {
-              key: {
-                text: "Account number"
-              },
-              value: {
-                html: "12344567"
-              }
-            }
-          ]
-        }) }}
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Bank or building society
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Nationwide
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name on the account
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Theodora Best
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Sort code
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['sort-code'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Account number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['account-number'] }}
+            </dd>
+          </div>
+        </dl>
 
-        <p class="govuk-body"><a href="find-someone" class="govuk-link">Start another journey</a></p>
+        <p class="govuk-body"><a href="find-someone" class="govuk-link">Search again</a></p>
 
        </div>
        </form>
