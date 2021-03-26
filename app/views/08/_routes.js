@@ -50,6 +50,10 @@ router.post('/staff/someone-else', function (req, res) {
     res.redirect('interruption-success')
   }
 
+  else if (sortCode === '111113') {
+    res.redirect('name-error')
+  }
+
   else {
     res.redirect('check-answers')
   }
