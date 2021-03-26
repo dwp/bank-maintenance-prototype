@@ -53,6 +53,15 @@ Bank Maintenance
     </span>
     <input class="govuk-input govuk-input--error" id="name-on-the-account" name="name-on-the-account" type="text" spellcheck="false" value="{{ data['name-on-the-account'] }}"></div>
 
+    {{ govukDetails({
+      summaryText: "Help with accents or special characters",
+      html: "Replace accents or special characters with the equivalent English language letter. For example:
+      <ul>
+        <li>Instead of <b>Zöe</b>, type Zoe</li>
+        <li>Instead of <b>José</b>, type Jose</li>
+      </ul>"
+    }) }}
+
   <div class="govuk-form-group">
     <label class="govuk-label" for="sort-code">
       Sort code
