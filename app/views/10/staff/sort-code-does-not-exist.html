@@ -1,0 +1,101 @@
+
+{% extends "layout.html" %}
+
+{% block header %}
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__content">
+      <a href="#" class="govuk-header__link govuk-header__link--service-name">
+        Winter fuel allowance
+      </a>
+    </div>
+  </div>
+</header>
+{% endblock %}
+
+{% block pageTitle %}
+Bank Maintenance
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  "tag": {
+    "text": "prototype"
+  },
+  "html": "This is a prototype of a new service."
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "bank-details"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<form action="change-interruption" method="post" novalidate>
+
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      There is a problem with these account details
+    </h1>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        We do not recognise this sort code.
+      </strong>
+    </div>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Name on the account
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['name-on-the-account'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Sort code
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['sort-code'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Account number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['account-number'] }}
+        </dd>
+      </div>
+    </dl>
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Enter details again",
+        classes: "govuk-!-margin-right-2",
+        href: "bank-details"
+      }) }}
+
+      {{ govukButton({
+        text: "Cancel changes",
+        classes: "govuk-button--secondary",
+        href: "../winter-fuel/results"
+      }) }}
+
+    </div>
+    </div>
+    </div>
+
+</form>
+
+{% endblock %}
