@@ -32,15 +32,14 @@ Bank Maintenance
 
 <form action="change-my-name" method="post" novalidate>
 
-    {{ govukErrorSummary({
-      titleText: "There is a problem",
-      errorList: [
-        {
-          text: "Enter a valid account number like 00733445",
-          href: "#passport-issued-error"
-        }
-      ]
-    }) }}
+  {{ govukDetails({
+    summaryText: "Help with accents or special characters",
+    html: "Replace accents or special characters with a letter from the English alphabet. For example:
+    <ul>
+      <li><b>Zoe</b> instead of Zöe</li>
+      <li><b>Jose</b> instead of José</li>
+    </ul>"
+  }) }}
 
   <h1 class="govuk-heading-l">Bank or building society account details</h1>
 
