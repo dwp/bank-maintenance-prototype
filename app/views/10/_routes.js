@@ -38,6 +38,14 @@ router.post('/staff/someone-else', function (req, res) {
     res.redirect('roll-number-format-error')
   }
 
+  else if (sortCode === '777777') {
+    res.redirect('membership-number-format-error')
+  }
+
+  else if (sortCode === '888888') {
+    res.redirect('membership-number-error')
+  }
+
   else if (sortCode === '555555') {
     res.redirect('account-number-does-not-match')
   }

@@ -66,8 +66,8 @@ Bank Maintenance
 
         <h3 class="govuk-heading-s">Changes</h3>
         <ul class="govuk-list govuk-list--bullet">
-        <li>added winter fuel allowance staff journey</li>
-        <li>added service down page</li>
+        <li>added details component with updated information about special characters</li>
+        <li>added credit union content</li>
         </ul>
 
         <h3 class="govuk-heading-s">Hypothesis</h3>
@@ -79,7 +79,7 @@ Bank Maintenance
 
         {{ govukButton({
           text: "View prototype",
-          href: "/08/winter-fuel/find-someone"
+          href: "/10/winter-fuel/find-someone"
         }) }}
 
         <h4 class="govuk-heading-s">Prototype sort codes</h4>
@@ -94,6 +94,8 @@ Bank Maintenance
           <li>444444 - roll number format validation</li>
           <li>555555 - account number doesn't match sort code validation</li>
           <li>666666 - happy path</li>
+          <li>777777 - membership number format validation</li>
+          <li>888888 - membership number validation</li>
           <li>Empty sort code field - enter sort code validation</li>
         </ul>
 
@@ -105,6 +107,67 @@ Bank Maintenance
     {# End of most recent box #}
 
     <h2 class="govuk-heading-l">Previous versions</h2>
+
+    {# Start of prototype write up #}
+    <div class="prototype-write-up">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <dl>
+            <dt class="govuk-heading-s">Date of release</dt>
+            <dd class="govuk-body">TBC</dd>
+          </dl>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          <dl>
+            <dt class="govuk-heading-s">Feature</dt>
+            <dd class="govuk-body">Bank Maintenance UI</dd>
+          </dl>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          <dl>
+            <dt class="govuk-heading-s">Related stories</dt>
+            <dd class="govuk-body">TBC</dd>
+          </dl>
+        </div>
+      </div>
+
+      <h3 class="govuk-heading-s">Changes</h3>
+      <ul class="govuk-list govuk-list--bullet">
+      <li>added winter fuel allowance staff journey</li>
+      <li>added service down page</li>
+      </ul>
+
+      <h3 class="govuk-heading-s">Hypothesis</h3>
+      <p>Due to be updated</p>
+
+      <h3 class="govuk-heading-s">Research notes</h3>
+      <p>Due to be updated</p>
+
+
+      {{ govukButton({
+        text: "View prototype",
+        href: "/08/winter-fuel/find-someone"
+      }) }}
+
+      <h4 class="govuk-heading-s">Prototype sort codes</h4>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>112233 - account number validation</li>
+        <li>1122334 - sort code validation</li>
+        <li>111111 - roll number validation</li>
+        <li>111113 - name format error - with special characters</li>
+        <li>222222 - sort code changed validation</li>
+        <li>223344 - service down</li>
+        <li>333333 - sort code doesn't exist validation</li>
+        <li>444444 - roll number format validation</li>
+        <li>555555 - account number doesn't match sort code validation</li>
+        <li>666666 - happy path</li>
+        <li>Empty sort code field - enter sort code validation</li>
+      </ul>
+
+    </div>
+    {# End of prototype write up #}
 
           {# Start of hidden panel #}
           <details class="govuk-details all-versions">
