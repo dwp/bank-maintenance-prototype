@@ -30,21 +30,18 @@ Bank Maintenance
 
 {% block content %}
 
-<div class="govuk-width-container">
-  <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">Sorry, there is a problem with the service</h1>
-        <p class="govuk-body">We are currently unable to change the bank account details.</p>
-        <p class="govuk-body">Try again later.</p>
+        <p class="govuk-body">We cannot take the bank details from you right now.</p>
+        <p class="govuk-body">We will contact you for your bank account details if you're application is approved.</p>
+        <p class="govuk-body">You can continue with your application.</p>
         {{ govukButton({
-          text: "Go back",
-          href: "../winter-fuel/results"
+          text: "Continue application",
+          href: "#"
         }) }}
       </div>
     </div>
-  </main>
-</div>
 
 
 {% endblock %}
