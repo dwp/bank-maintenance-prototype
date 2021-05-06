@@ -5,7 +5,6 @@ const router = express.Router()
 
 // Validation routing depending on sort code that's entered
 router.use('/11', require('./views/11/_routes'));
-router.use('/AA', require('./views/AA/_routes'));
 router.use('/10', require('./views/10/_routes'));
 router.use('/09', require('./views/09/_routes'));
 router.use('/08', require('./views/08/_routes'));
