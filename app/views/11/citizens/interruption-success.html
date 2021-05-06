@@ -85,17 +85,19 @@ Bank Maintenance
       </dd>
     </div>
   </dl>
-</div>
+  <div class="govuk-inset-text">
+    You can continue with the application after confirming your bank details.
+  </div>
+
+    {{ govukButton({
+      text: "Continue",
+      classes: "govuk-!-margin-right-2",
+      href: "../winter-fuel/results-success"
+    }) }}
+
+  </div>
 </div>
 
-<div class="govuk-button-group">
-  {{ govukButton({
-    text: "Continue",
-    classes: "govuk-!-margin-right-2",
-    href: "../winter-fuel/results-success"
-  }) }}
-
-</div>
 
 
 {% endblock %}
