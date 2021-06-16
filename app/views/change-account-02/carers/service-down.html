@@ -1,0 +1,36 @@
+
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+Bank Maintenance
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  "tag": {
+    "text": "prototype"
+  },
+  "html": "This is a prototype of a new service."
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Sorry, there is a problem with the service</h1>
+        <p class="govuk-body">We cannot take the bank details from you right now.</p>
+        <p class="govuk-body">We will contact you for your bank account details if you're application is approved.</p>
+        <p class="govuk-body">You can continue with your application.</p>
+        {{ govukButton({
+          text: "Continue application",
+          href: "#"
+        }) }}
+      </div>
+    </div>
+
+
+{% endblock %}
