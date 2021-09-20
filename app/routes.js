@@ -4,6 +4,7 @@ const router = express.Router()
 // Add your routes here - above the module.exports line
 
 // Validation routing depending on sort code that's entered
+router.use('/12', require('./views/12/_routes'));
 router.use('/11', require('./views/11/_routes'));
 router.use('/10', require('./views/10/_routes'));
 router.use('/09', require('./views/09/_routes'));
