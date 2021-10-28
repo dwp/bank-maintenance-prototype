@@ -48,11 +48,19 @@ Bank Maintenance
       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
       <strong class="govuk-warning-text__text">
         <span class="govuk-warning-text__assistive">Warning</span>
-        This sort code is out of date - check it with your bank, building society or credit union and try again
+        Enter a building society roll number.
       </strong>
     </div>
 
     <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Building society name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Nationwide
+        </dd>
+      </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-!-width-one-half">
           Name on the account
@@ -77,6 +85,14 @@ Bank Maintenance
           {{ data['account-number'] }}
         </dd>
       </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Roll number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['roll-number'] }}
+        </dd>
+      </div>
     </dl>
 
     <div class="govuk-button-group">
@@ -92,9 +108,6 @@ Bank Maintenance
         href: "../winter-fuel/results"
       }) }}
 
-    </div>
-
-    </div>
     </div>
 
 </form>
